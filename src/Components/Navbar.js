@@ -4,6 +4,7 @@ import { AiOutlineAlignRight } from 'react-icons/ai'
 import { HiOutlineSearch } from 'react-icons/hi'
 import { MdDashboard } from 'react-icons/md'
 import { FaRegUser } from 'react-icons/fa'
+import { LuLogOut } from 'react-icons/lu'
 const Navbar = () => {
   const [OpenSidebar, setOpenSidebar] = useState(false)
   return (
@@ -55,7 +56,7 @@ const Navbar = () => {
               <MdDashboard className='text-xl' />
             </div>
 
-            <span className={`text-[#fff] text-[15px] font-medium whitespace-nowrap pointer-events-none transition-all duration-500 ease-linear group-hover:text-[#1d1b31] ${OpenSidebar ? 'w-full pr-[20px] pl-[50px] flex' : 'w-[40px] hidden'} `}>Dashboard</span>
+            <span className={`text-[#fff] text-[15px] font-medium whitespace-nowrap pointer-events-none transition-all duration-500 ease-linear group-hover:text-[#1d1b31] ${OpenSidebar ? 'w-full pr-[20px] pl-[50px]' : 'w-[40px] opacity-0'} `}>Dashboard</span>
 
           </a>
 
@@ -72,11 +73,31 @@ const Navbar = () => {
               <FaRegUser className='text-xl' />
             </div>
 
-            <span className={`text-[#fff] text-[15px] font-medium whitespace-nowrap pointer-events-none transition-all duration-500 ease-linear group-hover:text-[#1d1b31] ${OpenSidebar ? 'w-full pr-[20px] pl-[50px] flex' : 'w-[40px] hidden'} `}>Profile</span>
+            <span className={`text-[#fff] text-[15px] font-medium whitespace-nowrap pointer-events-none transition-all duration-500 ease-linear group-hover:text-[#1d1b31] ${OpenSidebar ? 'w-full pr-[20px] pl-[50px]' : 'w-[40px] opacity-0'} `}>Profile</span>
 
           </a>
 
           <span className={`tooltip group-hover:opacity-100 group-hover:pointer-events-auto group-hover:transition-all group-hover:duration-300 group-hover:ease-linear group-hover:top-[50%] group-hover:transfrom group-hover:translate-y-[-50%] ${OpenSidebar ? 'hidden' : ''}`} style={{ left: 'calc(100% + 15px)' }}>Profile</span>
+        </li>
+
+        {/* Profile */}
+
+        <li className={`fixed h-[65px] left-0 bottom-0 py-[10px] px-[14px] bg-[#1d1b31] hover:bg-[#fff] transition-all duration-300 ease-linear overflow-hidden group ${OpenSidebar ? 'sm:w-[250px] w-[180px]' : 'sm:w-[70px] w-[50px]'}`}>
+          <div className='flex flex-nowrap items-center'>
+            <img src="" alt="" className='h-[45px] w-[45px] object-cover rounded-[6px] mr-[10px]' />
+
+            <div>
+              <h1 className='text-[18px] font-medium text-[#fff] group-hover:text-[#1d1b31] whitespace-nowrap'>Dev Hackers</h1>
+
+              <div className='text-[15px] font-medium text-[#fff] group-hover:text-[#1d1b31] whitespace-nowrap'>Web Developers</div>
+            </div>
+          </div>
+
+          {/* Logout */}
+
+          <div className={`absolute top-[50%] right-0 transform translate-y-[-50%] h-[60px] leading-[60px] transition-all duration-500 ease-linear text-[#fff] flex items-center justify-center cursor-pointer hover:bg-[#fff] group-hover:text-[#1d1b31] ${OpenSidebar ? 'w-[50px] bg-none' : 'w-full bg-[#1d1b31]'}`}>
+            <LuLogOut className='text-2xl' />
+          </div>
         </li>
 
       </ul>
