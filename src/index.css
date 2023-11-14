@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tooltip {
+    @apply absolute top-[-20px] z-[3] bg-[#fff] py-[6px] px-[12px] rounded-[4px] text-sm font-normal opacity-0 whitespace-nowrap pointer-events-none transition duration-500 hidden sm:inline-block
+}
